@@ -42,6 +42,7 @@ namespace ElevenNote.Service
                     {
                         NoteId = e.NoteId,
                         Title = e.Title,
+                        CategoryId = (int)e.CategoryId,
                         IsStarred = e.IsStarred,
                         CreatedUtc = e.CreatedUtc
                     });
@@ -58,6 +59,8 @@ namespace ElevenNote.Service
                     NoteId = entity.NoteId,
                     Title = entity.Title,
                     Content = entity.Content,
+                    CategoryId = (int)entity.CategoryId,
+                    CategoryName = _ctx.Categories.Where(p => p.Name == entity.Category.Name).ToString(),
                     IsStarred = entity.IsStarred,
                     CreatedUtc = entity.CreatedUtc,
                     ModifiedUtc = entity.ModifiedUtc
@@ -75,6 +78,7 @@ namespace ElevenNote.Service
 
                 entity.Title = model.Title;
                 entity.Content = model.Content;
+                entity.CategoryId = model.CategoryId;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
                 entity.IsStarred = model.IsStarred;
 

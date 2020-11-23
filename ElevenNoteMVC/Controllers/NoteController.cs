@@ -69,6 +69,7 @@ namespace ElevenNoteMVC.Controllers
                 NoteId = model.NoteId,
                 Title = model.Title,
                 Content = model.Content,
+                CategoryId = model.CategoryId,
                 IsStarred = model.IsStarred
             };
             return View(detail);
