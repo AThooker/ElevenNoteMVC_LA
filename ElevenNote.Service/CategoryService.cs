@@ -39,7 +39,7 @@ namespace ElevenNote.Service
                         Name = p.Name,
                         Notes = p.Notes.ToList(),
                     });
-                return entity;
+                return entity.ToList();
             }
         }
     }
