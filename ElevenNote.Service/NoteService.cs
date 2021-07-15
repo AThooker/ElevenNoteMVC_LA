@@ -61,7 +61,7 @@ namespace ElevenNote.Service
                     Title = entity.Title,
                     Content = entity.Content,
                     CategoryId = (int)entity.CategoryId,
-                    CategoryName = _ctx.Categories.Where(p => p.Name == entity.Category.Name).ToString(),
+                    CategoryName = entity.Category.Name,
                     IsStarred = entity.IsStarred,
                     CreatedUtc = entity.CreatedUtc,
                     ModifiedUtc = entity.ModifiedUtc
